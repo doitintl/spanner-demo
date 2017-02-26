@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spanner-writer
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spanner-writer
+    spec:
+      containers:
+      - name: spanner-writer
+        image: gcr.io/doit-playground/spanner-writer:v1
